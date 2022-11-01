@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quality Image Tool</title>
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}" />
+  </head>
+
+  <body>
+    <div class="header" href="/" >
+       <!-- Brand -->
+      <h1>Quality Image Tool</h1>
+
+    </div>
+
+    <!-- Sidebar -->
+<div class="w3-sidebar w3-text-light-blue w3-bar-block" style="width:15%">
+  <h3 class="w3-bar-item">Menu</h3>
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Breast Cancer Detection</a>
+    <a href="#" class="w3-bar-item w3-button">Image Physical Quality</a>
+    <a href="/accounts/logout" class="w3-bar-item w3-button">Logout</a>
+</div>
+
+<form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input
+        class="custom-file-upload"
+        type="file"
+        accept="fdicom"
+        name="fdicom"
+        id="file"
+      />
+      <button class="compress_image" type="submit" id="submitBtn">
+	Estimacion de SDNR
+      </button>
+      <div class="status">
+        <p id="message">{{ message }}</p>
+      </div>
+    </form>
+
+<div class="wrapper">
+   <img
+        src="{% static image_name %}"
+	alt="Compressed Image"
+        width="400px"
+     />
+
+     <div class="info_container">
+        <ul>
+          <li>File name: <span class="name">{{ fname }}</span></li>
+           <li>SNDR Value: <span class="name">{{ sdnr }}</span></li>
+          <li>Quality: <span class="type">{{ calidad }}</span></li>
+        </ul>
+      </div>
+    </div>
+
+ <div class="wrapper">
+  <p> Author: Carlos Cardona. Proprietary software, no public license. </p>
+</div>
+<!--     <script src="{% static 'js/main.js' %}"></script> -->
+  </body>
+</html>

@@ -1,0 +1,29 @@
+# Author: Carlos Cardona                                                                       
+
+import os
+import sys
+
+import matplotlib.pyplot as plt
+import pydicom
+import numpy as np
+import cv2 as cv
+#from PIL import Image                                                                         
+
+class SDNR(object):
+    def __init__(self, image_path: str, windows_size=100, color=False):
+        self.color=color
+        self.image_path=image_path
+        self.size=windows_size
+        self.image = cv.imread(self.image_path, cv.IMREAD_UNCHANGED)
+
+         def background_window(self):
+        """ Return a window containing only background pixels"""
+        size=self.size
+        image=self.image
+        if self.color:
+            image = cv.cvtColor(image,cv.COLOR_BGR2GRAY)
+        ret, thresh = cv.threshold(image,0,255,cv.THRESH_BINARY_INV+cv.THRESH_OTSU)
+        rows=thresh.shape[0]
+        cols=thresh.shape[1]
+        coords=[]
+        #random.randint(0, rows)    

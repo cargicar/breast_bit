@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BiT Image Prediction Tool</title>
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}" />
+  </head>
+
+  <body>
+    <div class="header" href="/" >
+       <!-- Brand -->
+      <h1>   Breast Cancer Warning System</h1>
+          
+    </div>
+      
+<!-- Sidebar -->
+<div class="w3-sidebar w3-text-light-blue w3-bar-block" style="width:15%">
+  <h3 class="w3-bar-item">Menu</h3>
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="/" class="w3-bar-item w3-button">Breast Cancer Detection</a>
+    <a href="/quality_image" class="w3-bar-item w3-button">Image Physical Quality</a>
+    <a href="/accounts/logout" class="w3-bar-item w3-button">Logout</a>
+</div>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input
+        class="custom-file-upload"
+        type="file"
+        accept="image"
+        name="image"
+        id="file"
+      />
+      <button class="compress_image" type="submit" id="submitBtn">
+        Estimate Type of Mass in Breast
+      </button>
+      <div class="status">
+        <p id="message">{{ message }}</p>
+      </div>
+    </form>
+
+    <div class="wrapper">
+      <img
+        src="{% if image_url %}{{ image_url }}{% else %}{% static 'images/default.png' %}{% endif %}"
+        alt="Compressed Image"
+        width="400px"
+      />
+
+      <div class="info_container">
+        <ul>
+          <li>Name: <span class="name">{{ image.name }}</span></li>
+          <li>Prediction: <span class="type">{{ prediction }}</span></li>
+        </ul>
+      </div>
+    </div>
+
+ <div class="wrapper">
+  <p> Author: Carlos Cardona. Proprietary software, no public license. </p>
+</div>  
+<!--     <script src="{% static 'js/main.js' %}"></script> -->
+  </body>
+</html>
