@@ -24,7 +24,7 @@ We have use Big Data Transfer Learning (BiT) to train a network to detect malign
 ```bash
 # Clone the repository
 git https://github.com/cargicar/breast_bit
-# switch to the starter branch
+# switch to it
 cd breast_bit
 ```
 
@@ -35,6 +35,8 @@ cd breast_bit
 py -3 -m venv env
 # Linux and Mac
 python3 -m venv env
+# or use conda
+conda create -n [my_env] python
 ```
 
 - Activate the virtual environment.
@@ -44,6 +46,8 @@ python3 -m venv env
 .\env\Scripts\activate
 # Linux and Mac
 source env/bin/activate
+# or use conda
+conda activate [my_env]
 ```
 
 - Install all the required packages.
