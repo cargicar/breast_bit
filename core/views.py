@@ -36,8 +36,8 @@ def index(request):
     try:
         image = request.FILES["image"]
         print("Name", image.file)
-        _image = fss.save(image.name, image)
-        path = str(settings.MEDIA_ROOT) + "/" + image.name
+        path = str(settings.MEDIA_DIR) + "/" + image.name
+        _image = fss.save(path, image)
         # image details
         image_url = fss.url(_image)
         # Read the image
