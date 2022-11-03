@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3sekm90*pdty&#kt4k-doz$ozoh+f5s(h3f&fqfah&m-7tjo51
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =["ec2-34-228-116-94.compute-1.amazonaws.com"]
+ALLOWED_HOSTS =[]
 
 # Application definition
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,6 +125,10 @@ USE_TZ = True
 MEDIA_DIR = BASE_DIR / "media"
 STATIC_DIR = BASE_DIR / "assets"
 
+# Absolute path to the directory where collectstatic will collect static files for deployment.
+#MEDIA_DIR = BASE_DIR / "media"
+STATIC_ROOT = BASE_DIR / "assetsfiles"
+
 STATIC_URL = "assets/"
 MEDIA_URL = "media/"
 LOGOUT_REDIRECT_URL = '/logout'
@@ -135,3 +140,7 @@ MEDIAFILES_DIRS=[MEDIA_DIR,]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Simplified static file serving.
+# https://pypi.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

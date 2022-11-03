@@ -31,15 +31,16 @@ class CustomFileSystemStorage(FileSystemStorage):
 def index(request):
     message = ""
     prediction = ""
+    image_name= ""
     RESIZE_TO=160
     fss = CustomFileSystemStorage()
     try:
         image = request.FILES["image"]
-        print("Name", image.file)
-        path = str(settings.MEDIA_DIR) + "/" + image.name
+        path = str(settings.STATIC_DIR) + "/images/" + image.name
         _image = fss.save(path, image)
+        image_name = "/images/" + image.name
         # image details
-        image_url = fss.url(_image)
+
         # Read the image
         imag=cv2.imread(path)
         imag = tf.image.resize(imag, (RESIZE_TO, RESIZE_TO))
@@ -72,7 +73,7 @@ def index(request):
             {
                 "message": message,
                 "image": image,
-                "image_url": image_url,
+                "image_name": image_name,
                 "prediction": prediction,
             },
         )
