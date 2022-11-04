@@ -30,13 +30,12 @@ SECRET_KEY =os.environ.get('SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-#ALLOWED_HOSTS = ['web-production-f7c5.up.railway.app', 'localhost']
-ALLOWED_HOSTS = ['.railway.com','127.0.0.1', 'localhost']
-# CSRF_TRUSTED_ORIGINS = ['http://web-production-f7c5.up.railway.app',
-#                         'https://web-production-f7c5.up.railway.app',
-#                         "http://localhost",
-#                         ]
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app', 'http://localhost']
+ALLOWED_HOSTS = ['web-production-2cb9.up.railway.app', 'localhost']
+
+CSRF_TRUSTED_ORIGINS = ['https://web-production-2cb9.up.railway.app',
+                        "http://localhost",
+                        ]
+#CSRF_TRUSTED_ORIGINS = ['https://*.railway.app', 'http://localhost']
 # Application definition
 
 INSTALLED_APPS = [
