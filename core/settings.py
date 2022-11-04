@@ -32,12 +32,12 @@ os.getenv("SECRET_KEY")
 DEBUG = False
 
 #ALLOWED_HOSTS = ['web-production-f7c5.up.railway.app', 'localhost']
-ALLOWED_HOSTS = ['.railway.com','127.0.0.1']
+ALLOWED_HOSTS = ['.railway.com','127.0.0.1', 'localhost']
 # CSRF_TRUSTED_ORIGINS = ['http://web-production-f7c5.up.railway.app',
 #                         'https://web-production-f7c5.up.railway.app',
 #                         "http://localhost",
 #                         ]
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app', 'http://localhost']
 # Application definition
 
 INSTALLED_APPS = [
