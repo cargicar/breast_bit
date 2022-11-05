@@ -28,12 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['web-production-2cb9.up.railway.app', 'localhost']
+ALLOWED_HOSTS = ['web-production-2cb9.up.railway.app','urchin-app-fei4q.ondigitalocean.app', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = ['https://web-production-2cb9.up.railway.app',
-                        "http://localhost",
+                        'https://urchin-app-fei4q.ondigitalocean.app',
+                        'http://localhost',
                         ]
 #CSRF_TRUSTED_ORIGINS = ['https://*.railway.app', 'http://localhost']
 # Application definition
