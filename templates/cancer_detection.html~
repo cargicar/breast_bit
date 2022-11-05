@@ -17,8 +17,14 @@
     </div>
       
 <!-- Sidebar -->
-{% include "includes/sidebar.html" %}
-    
+<div class="w3-sidebar w3-text-light-blue w3-bar-block" style="width:15%">
+  <h3 class="w3-bar-item">Menu</h3>
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="/cancer_detection" class="w3-bar-item w3-button">Breast Cancer Detection</a>
+    <a href="/quality_image" class="w3-bar-item w3-button">Image Physical Quality</a>
+    <a href="/accounts/logout" class="w3-bar-item w3-button">Logout</a>
+</div>
+
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <input
@@ -52,7 +58,11 @@
     </div>
 
  <div class="wrapper">
+<<<<<<< HEAD
 {% include "includes/footer.html" %}
+=======
+  {% include "includes/footer.html" %}
+>>>>>>> 90905bebbee95e1d0a1230706c95236a9124ac5f
 </div>  
 <!--     <script src="{% static 'js/main.js' %}"></script> -->
   </body>
