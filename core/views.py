@@ -87,7 +87,7 @@ def cancer_detection(request):
         return TemplateResponse(
             request,
             "cancer_detection.html",
-            {"message": "No Image Selected"},
+            {"message": "Aún no has seleccionado una imagen (.png, .jpg, .jpeg)"},
         )
 
     
@@ -141,7 +141,7 @@ def quality_image(request):
         return TemplateResponse(
             request,
             "quality_image.html",
-            {"message": "No Image Selected"},
+            {"message": "Aún no has seleccionado tu archivo DICOM (.dcm)"},
         )
 
 # @login_required
