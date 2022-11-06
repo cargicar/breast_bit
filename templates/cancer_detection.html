@@ -12,7 +12,7 @@
   <body>
     <div class="header" href="/" >
        <!-- Brand -->
-      <h1>   Breast Cancer Warning System</h1>
+      <h1>Sistema para Alerta de Cancer de Mama</h1>
           
     </div>
       
@@ -28,7 +28,7 @@
         id="file"
       />
       <button class="compress_image" type="submit" id="submitBtn">
-        Estimate Type of Mass in Breast
+        Estimación del Tipo de Masa
       </button>
       <div class="status">
         <p id="message">{{ message }}</p>
@@ -44,18 +44,14 @@
 
       <div class="info_container">
         <ul>
-          <li>Name: <span class="name">{{ image.name }}</span></li>
-          <li>Prediction: <span class="type">{{ prediction }}</span></li>
+          <li>Nombre del Archivo: <span class="name">{{ image.name }}</span></li>
+          <li>Predición: <span class="type">{{ prediction }}</span></li>
         </ul>
       </div>
     </div>
 
  <div class="wrapper">
-<<<<<<< HEAD
 {% include "includes/footer.html" %}
-=======
-  {% include "includes/footer.html" %}
->>>>>>> 90905bebbee95e1d0a1230706c95236a9124ac5f
 </div>  
 <!--     <script src="{% static 'js/main.js' %}"></script> -->
   </body>

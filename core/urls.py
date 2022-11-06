@@ -22,8 +22,8 @@ from .views import index, logout, quality_image, cancer_detection
 urlpatterns = [
     path("", index, name="index"),
     path("logout/",logout, name="logout"),
-    path("quality_image/",quality_image, name="quality_image"),
-    path("cancer_detection/",cancer_detection, name="cancer_detection"),
+    path("quality_image/", quality_image, name="quality_image"),
+    path("cancer_detection/", cancer_detection, name="cancer_detection"),
     path("admin/", admin.site.urls),
     path("accounts/", include('django.contrib.auth.urls')),
 ]

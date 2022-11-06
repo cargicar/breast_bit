@@ -13,7 +13,7 @@
   <body>
     <div class="header" href="/" >
        <!-- Brand -->
-      <h1>Quality Image Tool</h1>
+      <h1>Estimación Calidad de Imagen</h1>
 
     </div>
 
@@ -45,15 +45,15 @@
 
      <div class="info_container">
         <ul>
-          <li>File name: <span class="name">{{ fname }}</span></li>
-           <li>SNDR Value: <span class="name">{{ sdnr }}</span></li>
-          <li>Quality: <span class="type">{{ calidad }}</span></li>
+          <li>Nombre del Archivo: <span class="name">{{ fname }}</span></li>
+           <li>Valor SNDR: <span class="name">{{ sdnr }}</span></li>
+          <li>Nota de Calidad: <span class="type">{{ calidad }}</span></li>
         </ul>
       </div>
     </div>
 
  <div class="wrapper">
-  <p> Author: Carlos Cardona. Proprietary software, no public license. </p>
+{% include "includes/footer.html" %}
 </div>
 <!--     <script src="{% static 'js/main.js' %}"></script> -->
   </body>

@@ -407,6 +407,22 @@ form {
   padding: 1rem 0;
 }
 
+.hero-image {
+  background-image: url("../images/AIandMed1.jpg");
+   height: 700px;
+  /*widht : 200px;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+  /* opacity: 0.5; */
+ }
+p.ex1 {
+    padding-left: 20%;
+    color: var(--white-color);
+    font-size:30px;
+    font-weight: 800;
+}
 #message {
   color: var(--main-color);
   font-size: var(--normal-font-size);

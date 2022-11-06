@@ -29,62 +29,7 @@ class CustomFileSystemStorage(FileSystemStorage):
  
 @login_required
 def index(request):
-    message = ""
-    prediction = ""
-    image_name= ""
-    RESIZE_TO=160
-    fss = CustomFileSystemStorage()
-    try:
-        image = request.FILES["image"]
-        path = str(settings.STATIC_DIR) + "/images/" + image.name
-        _image = fss.save(path, image)
-        image_name = "/images/" + image.name
-        # image details
-
-        # Read the image
-        imag=cv2.imread(path)
-        imag = tf.image.resize(imag, (RESIZE_TO, RESIZE_TO))
-        resized_image = imag / 255.0
-        #img_from_ar = Image.fromarray(imag, 'RGB')
-                
-        test_image =np.expand_dims(resized_image, axis=0) 
-
-        # load model
-        # model = tf.keras.models.load_model(os.getcwd() + '/model.h5')
-        model = tf.keras.models.load_model(os.getcwd() + '/model') 
-        result = model.predict(test_image)
-        # ----------------
-        # LABELS
-        # Bening 0
-        # Maling 1
-        # ----------------
-        print("Prediction: " + str(np.argmax(result)))
-
-        if (np.argmax(result) == 0):
-            prediction = "Benigno"
-        elif (np.argmax(result) == 1):
-            prediction = "Maligno"
-        else:
-            prediction = "Unknown"
-        
-        return TemplateResponse(
-            request,
-            "index.html",
-            {
-                "message": message,
-                "image": image,
-                "image_name": image_name,
-                "prediction": prediction,
-            },
-        )
-    except MultiValueDictKeyError:
-
-        return TemplateResponse(
-            request,
-            "index.html",
-            {"message": "No Image Selected"},
-        )
-
+    return render(request, 'index.html')
 
  
 @login_required
@@ -129,7 +74,7 @@ def cancer_detection(request):
         
         return TemplateResponse(
             request,
-            "index.html",
+            "cancer_detection.html",
             {
                 "message": message,
                 "image": image,
@@ -141,7 +86,7 @@ def cancer_detection(request):
 
         return TemplateResponse(
             request,
-            "index.html",
+            "cancer_detection.html",
             {"message": "No Image Selected"},
         )
 
