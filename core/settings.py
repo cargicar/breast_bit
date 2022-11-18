@@ -30,12 +30,13 @@ SECRET_KEY =config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['web-production-2cb9.up.railway.app','urchin-app-fei4q.ondigitalocean.app', 'localhost']
+ALLOWED_HOSTS = ['ec2-54-82-38-26.compute-1.amazonaws.com',
+                 'web-production-2cb9.up.railway.app','urchin-app-fei4q.ondigitalocean.app', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-2cb9.up.railway.app',
-                        'https://urchin-app-fei4q.ondigitalocean.app',
-                        'http://localhost',
-                        ]
+# CSRF_TRUSTED_ORIGINS = ['https://web-production-2cb9.up.railway.app',
+#                         'https://urchin-app-fei4q.ondigitalocean.app',
+#                         'http://localhost',
+#                         ]
 #CSRF_TRUSTED_ORIGINS = ['https://*.railway.app', 'http://localhost']
 # Application definition
 
@@ -50,7 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+#    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

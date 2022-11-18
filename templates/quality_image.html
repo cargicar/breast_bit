@@ -13,7 +13,7 @@
   <body>
     <div class="header" href="/" >
        <!-- Brand -->
-      <h1>Estimación Calidad de Imagen</h1>
+      <h1>Quality of Image Estimation</h1>
 
     </div>
 
@@ -29,7 +29,7 @@
         id="file"
       />
       <button class="compress_image" type="submit" id="submitBtn">
-	Estimacion de SDNR
+	SDNR Estimation
       </button>
       <div class="status">
         <p id="message">{{ message }}</p>
@@ -45,13 +45,13 @@
 
      <div class="info_container">
         <ul>
-          <li>Nombre del Archivo: <span class="name">{{ fname }}</span></li>
-           <li>Valor SNDR: <span class="name">{{ sdnr }}</span></li>
-          <li>Nota de Calidad: <span class="type">{{ calidad }}</span></li>
+          <li>File Name: <span class="name">{{ fname }}</span></li>
+           <li>SNDR: <span class="name">{{ sdnr }}</span></li>
+          <li>Quality Score: <span class="type">{{ calidad }}</span></li>
         </ul>
       </div>
     </div>
-
+<p class="ex2 w3-text-blue">This tool is still under construction, but the idea is that one can upload a whole DICOM file, and the algorithm will compute the Signal-Difference-to-Noise-Ratio (SDNR) of the Radiography image contained in the DICOM table. Such metric will gives an idea of the quality of the image. We will include also a measurement of Contrast-to-Noise-Ratio (CNR), Resolution and other useful metrics. </p>
  <div class="wrapper">
 {% include "includes/footer.html" %}
 </div>

@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,23 +12,19 @@
   <body>
     <div class="header" href="/" >
        <!-- Brand -->
-      <h1> Inteligencia Artificial y </br> Métodos de Automatización para Medicina</h1>          
+      <h1>Artificial Intelligence for </br> Cancer in Mammograms Detection </h1>
     </div>
       
 <!-- Sidebar -->
 {% include "includes/sidebar.html" %}
 
-<div class="hero-image">
-  <p class="ex1"></br></br>Actualmente la inteligencia artificial se esta convirtiendo en una herramienta fundamental en todas las areas de la salud. Sin embargo, el número de aplicaciones listo para ser desplegados en la práctica es muy limitado. Esto abre una oportunidad sin precedentes a las prestadoras de serviciones vanguardistas de ganar un ventaja importante a sus competidores menos innovadores.</br></br>
-
-    Unete a LuneraAI para liderar el sector de la Salud haciendo uso de las inmminentes aplicaciones de Inteligencia Artificial, Machine Learning y Automatización de Procesos.
-
-  </br> Este aplicativo es una pequeña muestra de estas poderosas herramientas.</p>
-</div>
-
+    <div class="hero-image">
+      <p class="ex1"></br></br>
+  Nowadays Artificial Intelligence is becoming an important tool within medicine and health areas. Machine Learning (ML) and Deep learning (DL) has been widely used and has achieved remarkable success in many medical imaging applications.  In this app, we use a DL model to classify masses in mammograms as malign or benign, in order to create an alert system that allows radiologist and physicians to pay closer attention to suspicious cases. </br></br>To train the model, we have used  transfer learning methodology. If you want to learn more about the technicalities, please visit the technical stuff section. </p>
+    </div>
  <div class="wrapper">
 {% include "includes/footer.html" %}
 </div>  
-<!--     <script src="{% static 'js/main.js' %}"></script> -->
+
   </body>
 </html>

@@ -12,10 +12,10 @@
   <body>
     <div class="header" href="/" >
        <!-- Brand -->
-      <h1>Sistema para Alerta de Cancer de Mama</h1>
+      <h1>Support Tool for </br> Malign/Bening Massas Detection</h1>
           
     </div>
-      
+     
 <!-- Sidebar -->
 {% include "includes/sidebar.html" %}
     <form method="POST" enctype="multipart/form-data">
@@ -28,7 +28,7 @@
         id="file"
       />
       <button class="compress_image" type="submit" id="submitBtn">
-        Estimación del Tipo de Masa
+        Type of Mass Estimation
       </button>
       <div class="status">
         <p id="message">{{ message }}</p>
@@ -44,12 +44,12 @@
 
       <div class="info_container">
         <ul>
-          <li>Nombre del Archivo: <span class="name">{{ image.name }}</span></li>
-          <li>Predición: <span class="type">{{ prediction }}</span></li>
+          <li>Name of file: <span class="name">{{ image.name }}</span></li>
+          <li>Prediction: <span class="type">{{ prediction }}</span></li>
         </ul>
       </div>
     </div>
-
+ <p class="ex2 w3-text-blue">A little explanation: We have trained the model using Regions of Interest (ROI) previously annotated by a specialist. In other words, the model will take a crop from the mammogram containing the ROI. However, the model is still able to generalize to whole mammograms, but the accuracy drops about 5 percentage. </p>
  <div class="wrapper">
 {% include "includes/footer.html" %}
 </div>  

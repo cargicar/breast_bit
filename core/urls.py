@@ -17,7 +17,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from .views import index, logout, quality_image, cancer_detection
+from .views import index, logout, quality_image, cancer_detection, jupyter_nb
 
 urlpatterns = [
     path("", index, name="index"),
@@ -25,6 +25,7 @@ urlpatterns = [
     path("quality_image/", quality_image, name="quality_image"),
     path("cancer_detection/", cancer_detection, name="cancer_detection"),
     path("admin/", admin.site.urls),
+    path("notebook/", jupyter_nb, name="jupyter_nb"),
     path("accounts/", include('django.contrib.auth.urls')),
 ]
 

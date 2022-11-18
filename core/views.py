@@ -27,12 +27,12 @@ class CustomFileSystemStorage(FileSystemStorage):
         self.delete(name)
         return name
  
-@login_required
+#@login_required
 def index(request):
     return render(request, 'index.html')
 
  
-@login_required
+#@login_required
 def cancer_detection(request):
     message = ""
     prediction = ""
@@ -87,11 +87,11 @@ def cancer_detection(request):
         return TemplateResponse(
             request,
             "cancer_detection.html",
-            {"message": "Aún no has seleccionado una imagen (.png, .jpg, .jpeg)"},
+            {"message": "Please upload a picture with a Region of Interest containing the suspicious mass (.png, .jpg, .jpeg)"},
         )
 
     
-@login_required
+#@login_required
 def quality_image(request):
     message = ""
     sdnr = ""
@@ -141,8 +141,14 @@ def quality_image(request):
         return TemplateResponse(
             request,
             "quality_image.html",
-            {"message": "Aún no has seleccionado tu archivo DICOM (.dcm)"},
+            {"message": "Please upload a DICOM file (.dcm)"},
         )
+
+ 
+#@login_required
+def jupyter_nb(request):
+    return render(request, 'jupyter_nb.html')
+
 
 # @login_required
 def logout(request):
